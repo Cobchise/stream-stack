@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { env } from '$env/dynamic/public';
+	import { Eye, Timer } from 'lucide-svelte';
 
 	interface ClipData {
 		id: string;
@@ -58,16 +59,37 @@
 </script>
 
 {#if !loading}
-<div class="grid grid-cols-3 gap-4">
-	{#each data as clip}
-		<div class="card bg-base-100 w-96 shadow-sm">
-			<figure>
-				<img src={clip['thumbnail_url']} alt="Twitch clip" />
-			</figure>
-			<div class="card-body">
-				<h2 class="card-title">{clip['title']}</h2>
+	<div class="grid grid-cols-3 gap-4 p-7">
+		{#each data as clip}
+			<div class="hover-3d">
+				<!-- content -->
+				<figure class="relative rounded-2xl">
+					<img src={clip['thumbnail_url']} alt="Twitch Clip" />
+					<div class="absolute top-0 left-0 w-full">
+						<div class="absolute top-2 left-2">
+							<h3 class="card-title">{clip['title']}</h3>
+						</div>
+						<div class="absolute top-40 left-5 text-center shadow-2xl">
+							<Eye />
+							{clip['view_count']}
+						</div>
+						<div class="absolute top-40 right-5 text-center shadow-2xl">
+							<Timer />
+							{clip['duration']}
+						</div>
+					</div>
+				</figure>
+
+				<!-- 8 empty divs needed for the 3D effect -->
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 			</div>
-		</div>
-	{/each}
-</div>
+		{/each}
+	</div>
 {/if}
