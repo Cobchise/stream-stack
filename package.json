@@ -67,7 +67,9 @@
     "vitest-browser-svelte": "^2.0.1"
   },
   "dependencies": {
+    "@icons-pack/svelte-simple-icons": "^6.5.0",
     "axios": "^1.13.2",
-    "better-sqlite3": "^12.4.1"
+    "better-sqlite3": "^12.4.1",
+    "lucide-svelte": "^0.554.0"
   }
 }
