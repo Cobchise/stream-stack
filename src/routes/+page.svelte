@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Logo from '$lib/assets/cob.png';
     import TwitchClips from '$lib/TwitchClips.svelte'
+	import Projects from '$lib/Projects.svelte'
     import { SiTwitch, SiYoutube } from '@icons-pack/svelte-simple-icons'
 </script>
 
@@ -56,11 +57,21 @@
 
 <!-- Hero End -->
 
+<div class="grid grid-cols-1">
+
 <!-- Clips Start -->
 
 <TwitchClips />
 
 <!-- Clips End -->
+
+<!-- Projects Start -->
+
+<Projects />
+
+<!-- Projects End -->
+
+</div>
 
 <!-- Footer Start -->
 

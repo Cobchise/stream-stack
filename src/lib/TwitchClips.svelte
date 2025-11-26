@@ -59,7 +59,8 @@
 </script>
 
 {#if !loading}
-	<div class="grid grid-cols-3 gap-4 p-7">
+    <h1 class="text-4xl text-left p-7">Twitch Clips</h1>
+	<div class="grid grid-cols-3 gap-5 p-7">
 		{#each data as clip}
 			<div class="hover-3d">
 				<!-- content -->
